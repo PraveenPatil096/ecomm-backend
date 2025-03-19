@@ -2,16 +2,16 @@ const express = require('express');
 const app = express();
 const {User} = require('./model/User');
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const morgan = require('morgan');
 const {Product} = require('./model/Product');
 const {Cart} = require('./model/Cart');
 
-
-
-mongoose.connect(`mongodb://127.0.0.1:27017/kleproject1`)
+//hVFyFZ35eYB2jFL2
+let MONGODB_URL = "mongodb+srv://praveenpatil0987h:hVFyFZ35eYB2jFL2@cluster0.gq3ox.mongodb.net/?retryWrites=true&w=majority"
+mongoose.connect(MONGODB_URL)
 .then(()=>{
     console.log("db is connected")
 }).catch((err)=>{
